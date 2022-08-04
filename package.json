@@ -1,0 +1,25 @@
+{
+  "name": "node-static-webserver",
+  "version": "1.0.0",
+  "description": "Minimal and light HTTP web server using Node.js modules. Do not use it in production! ",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node ./index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/a-tortevois/node-static-webserver.git"
+  },
+  "keywords": [
+    "node",
+    "nodejs",
+    "static",
+    "http",
+    "web",
+    "server"
+  ],
+  "author": "Alexandre TORTEVOIS <alexandre.tortevois@gmail.com>",
+  "license": "MIT",
+  "homepage": "https://github.com/a-tortevois/node-static-webserver#readme"
+}
