@@ -6,7 +6,7 @@ import { fileURLToPath } from 'url';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-const HTTP_PORT = 3000;
+const HTTP_PORT = process.env.npm_package_config_http_port || 3000;
 const MIME_TYPE = {
     ico: 'image/x-icon',
     html: 'text/html',

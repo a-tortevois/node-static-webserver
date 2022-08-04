@@ -4,8 +4,11 @@
   "description": "Minimal and light HTTP web server using Node.js modules. Do not use it in production! ",
   "main": "index.js",
   "type": "module",
+  "config" : { 
+	"http_port": 3000
+  },
   "scripts": {
-    "start": "node ./index.js"
+    "start": "start http://localhost:%npm_package_config_http_port% & node ./index.js"
   },
   "repository": {
     "type": "git",
