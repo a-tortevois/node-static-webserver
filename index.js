@@ -31,11 +31,13 @@ const MIME_TYPE = {
 };
 
 const server = http.createServer((req, res) => {
-    const pathname = new URL(req.url, `http://${req.headers.host}`).pathname;
-    let localPathname = path.join(__dirname, 'public', pathname);
-    if (!new RegExp(/\.[0-9a-z]+/).test(pathname)) {
-        localPathname += 'index.html';
+    if (req.method !== 'GET') {
+        console.error('Error 501:', req.method);
+        res.writeHead(501, {'Content-Type': 'text/html'});
+        return res.end('501 Not Implemented');
     }
+    const pathname = new URL(req.url, `http://${req.headers.host}`).pathname;
+    const localPathname = path.join(__dirname, 'public', pathname.replace(/\/$/, '/index.html'));
     console.log(req.method, req.url, localPathname);
     const extname = path.extname(localPathname).slice(1);
     if (!MIME_TYPE.hasOwnProperty(extname)) {
